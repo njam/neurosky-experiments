@@ -1,0 +1,10 @@
+{
+  "name": "thinkgear-experiments",
+  "version": "0.0.1",
+  "description": "Experiments with NeuroSky ThinkGear ",
+  "author": "njam",
+  "license": "MIT",
+  "dependencies": {
+    "node-neurosky": "~0.0.1"
+  }
+}

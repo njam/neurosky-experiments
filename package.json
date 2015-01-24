@@ -5,6 +5,6 @@
   "author": "njam",
   "license": "MIT",
   "dependencies": {
-    "node-neurosky": "~0.0.1"
+    "sha1": "^1.1.0"
   }
 }

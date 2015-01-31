@@ -32,6 +32,7 @@ MongoClient.connect('mongodb://localhost:27017/neurosky', function(err, db) {
 
   db.collection('samples').aggregate([
     {$match: {type: {$in: typeList}}},
+    {$sort: {time: -1}},
     {$group: {_id: '$time', valueList: {$push: {type: '$type', value: '$value'}}}}
   ], function(err, dataList) {
     assert.equal(err, null);

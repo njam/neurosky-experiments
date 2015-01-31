@@ -5,7 +5,10 @@
   "author": "njam",
   "license": "MIT",
   "dependencies": {
-    "sha1": "^1.1.0",
-    "mongodb": "^2.0.14"
+    "connect": "^3.3.4",
+    "json2csv": "^2.2.1",
+    "mongodb": "^2.0.14",
+    "serve-static": "^1.8.1",
+    "sha1": "^1.1.0"
   }
 }

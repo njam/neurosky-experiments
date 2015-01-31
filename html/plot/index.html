@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/dygraph/1.1.0/dygraph-combined.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+  </head>
+
+  <body>
+    <div id="plot" class="plot"></div>
+    <script type="text/javascript">
+      g = new Dygraph(
+        document.getElementById("plot"),
+        "data.csv",
+        {
+          rollPeriod: 10,
+          showRoller: true,
+          customBars: false,
+          title: 'Title',
+          strokeWidth: 0.0,
+          drawPoints: true,
+          pointSize: 1,
+          highlightCircleSize: 6
+        }
+      );
+    </script>
+  </body>
+</html>

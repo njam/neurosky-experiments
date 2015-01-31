@@ -10,8 +10,8 @@ MongoClient.connect('mongodb://localhost:27017/neurosky', function (err, db) {
   assert.equal(null, err);
   var collection = db.collection('samples');
 
-  var storeSample = function (type, value) {
-    var doc = {time: new Date(), type: type, value: value};
+  var storeSample = function (time, type, value) {
+    var doc = {time: time, type: type, value: value};
     collection.insert(doc, function (error, result) {
       if (error) {
         console.log('Error storing sample: ' + error);
@@ -19,9 +19,9 @@ MongoClient.connect('mongodb://localhost:27017/neurosky', function (err, db) {
     });
   };
 
-  var storeSamplesForKeys = function (object) {
+  var storeSamplesForKeys = function (time, object) {
     Object.keys(object).forEach(function (key) {
-      storeSample(key, object[key]);
+      storeSample(time, key, object[key]);
     });
   };
 
@@ -35,16 +35,16 @@ MongoClient.connect('mongodb://localhost:27017/neurosky', function (err, db) {
     var time = new Date();
     process.stdout.write("Data: " + time + "\r");
     if (data.blinkStrength) {
-      storeSample('blinkStrength', data.blinkStrength);
+      storeSample(time, 'blinkStrength', data.blinkStrength);
     }
     if (data.poorSignalLevel) {
-      storeSample('poorSignalLevel', data.poorSignalLevel);
+      storeSample(time, 'poorSignalLevel', data.poorSignalLevel);
     }
     if (data.eSense) {
-      storeSamplesForKeys(data.eSense);
+      storeSamplesForKeys(time, data.eSense);
     }
     if (data.eegPower) {
-      storeSamplesForKeys(data.eegPower);
+      storeSamplesForKeys(time, data.eegPower);
     }
   });
 

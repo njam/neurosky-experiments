@@ -18,21 +18,18 @@ Run:
 
 ThinkgearClient
 ---------------
-Client for the *Thinkgear Connector server*.
+Client for the *Thinkgear Connector* server.
 Emits data as specified by the [TGSP protocol](http://developer.neurosky.com/docs/lib/exe/fetch.php?media=thinkgear_socket_protocol.pdf).
 
 ```js
-var thinkgear = ThinkgearClient.create({
-  appName: 'foo',
-  appKey: sha1('foo'),
-  enableRawOutput: false
-});
-thinkgear.on('data', function (data) {
-  console.log(data);
+ThinkgearClient.createClient({appName: 'record'}, function(thinkgear) {
+  thinkgear.on('data', function(data) {
+    console.log(data);
+  });
 });
 ```
 
-The `eegPower` event values frequencies ([docu](http://developer.neurosky.com/docs/doku.php?id=thinkgear_communications_protocol)):
+The `eegPower` event's frequencies are ([docu](http://developer.neurosky.com/docs/doku.php?id=thinkgear_communications_protocol)):
 - `delta`: 0.5 - 2.75Hz
 - `theta'`: 3.5 - 6.75Hz
 - `lowAlpha`: 7.5 - 9.25Hz

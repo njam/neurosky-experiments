@@ -11,31 +11,13 @@
     <div id="legend" class="legend"></div>
 
     <script type="text/javascript">
-
       var renderTemplate = function(name, vars) {
         var template = _.unescape(document.getElementById('template-' + name).innerHTML);
         var compiled = _.template(template);
         return compiled(vars);
       };
 
-      var graph = new Dygraph(
-        document.getElementById("plot"),
-        "data.csv",
-        {
-          rollPeriod: 10,
-          showRoller: true,
-          customBars: false,
-          title: 'Title',
-          strokeWidth: 0.0,
-          drawPoints: true,
-          pointSize: 1,
-          highlightCircleSize: 6,
-          hideOverlayOnMouseOut: false,
-          labelsKMB: true
-        }
-      );
-
-      graph.ready(function() {
+      var renderVisibilityLegend = function(graph) {
         var $legend = $('#legend');
 
         var labelList = graph.getLabels();
@@ -58,7 +40,26 @@
           }
           graph.predraw_();
         });
-      });
+      };
+
+      var graph = new Dygraph(
+        document.getElementById("plot"),
+        "data.csv",
+        {
+          rollPeriod: 10,
+          showRoller: true,
+          customBars: false,
+          title: 'Title',
+          strokeWidth: 0.0,
+          drawPoints: true,
+          pointSize: 1,
+          highlightCircleSize: 6,
+          hideOverlayOnMouseOut: false,
+          labelsKMB: true
+        }
+      );
+
+      graph.ready(renderVisibilityLegend);
     </script>
 
     <template id="template-legend">

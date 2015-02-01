@@ -24,14 +24,26 @@ MongoClient.connect('mongodb://localhost:27017/neurosky', function(err, db) {
     });
   };
 
-  ThinkgearClient.createClient({appName: 'record'}, function(thinkgear) {
+  ThinkgearClient.createClient({appName: 'record', enableRawOutput: true}, function(thinkgear) {
+    var sampleCount = 0;
+    var timeOutput = new Date();
+
     thinkgear.on('data', function(data) {
+      sampleCount++;
       var time = new Date();
+      if ((time - timeOutput) / 1000 > 1) {
+        process.stdout.write(time + ': ' + sampleCount + " samples\r");
+        timeOutput = time;
+      }
+
       if (data.blinkStrength) {
         storeSample(time, 'blinkStrength', data.blinkStrength);
       }
       if (data.poorSignalLevel) {
         storeSample(time, 'poorSignalLevel', data.poorSignalLevel);
+      }
+      if (data.rawEeg) {
+        storeSample(time, 'rawEeg', data.rawEeg);
       }
       if (data.eSense) {
         storeSamplesForKeys(time, data.eSense);

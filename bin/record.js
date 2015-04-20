@@ -3,6 +3,7 @@
 var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
 var ThinkgearClient = require('../lib/thinkgear/client');
+var FFTSampler = require('../lib/fft/sampler').FFTSampler;
 
 
 MongoClient.connect('mongodb://localhost:27017/neurosky', function(err, db) {
@@ -32,7 +33,8 @@ MongoClient.connect('mongodb://localhost:27017/neurosky', function(err, db) {
       sampleCount++;
       var time = new Date();
       if ((time - timeOutput) / 1000 > 1) {
-        process.stdout.write(time + ': ' + sampleCount + " samples\r");
+        var sampleKey = Object.keys(data).shift();
+        process.stdout.write(time + ': ' + sampleCount + ' samples (last: ' + sampleKey + ")\r");
         timeOutput = time;
       }
 

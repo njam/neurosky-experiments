@@ -48,7 +48,7 @@ MongoClient.connect('mongodb://localhost:27017/neurosky', function(err, db) {
     storeSample('sefd', spectrum8to16.getSEF(0.95) - spectrum8to16.getSEF(0.5));
   });
 
-  var collectionInput = db.collection('night1');
+  var collectionInput = db.collection('samples');
 
   console.log('Ensuring indices…');
   collectionInput.ensureIndex({time: 1, type: 1}, function(err) {

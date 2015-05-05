@@ -34,7 +34,7 @@ MongoClient.connect('mongodb://localhost:27017/neurosky', function(err, db) {
       var time = new Date();
       if ((time - timeOutput) / 1000 > 1) {
         var sampleKey = Object.keys(data).shift();
-        process.stdout.write(time + ': ' + sampleCount + ' samples (last: ' + sampleKey + ")\r");
+        process.stdout.write(time + ': ' + sampleCount + ' samples (last: ' + sampleKey + ")\n");
         timeOutput = time;
       }
 

@@ -4,7 +4,7 @@ NeuroSky Experiments
 Device
 ------
 MindCap XL ([MindTec](http://www.mindtecstore.com/en/mindcap-xl), [Amazon](http://www.amazon.de/MindCap-XL/dp/B00H8NQ75Y))
-(NeuroSky's [TGAM EEG sensor](http://neurosky.com/products-markets/eeg-biosensors/hardware/) sending data over Bluetooth)
+(NeuroSky's [TGAM EEG sensor](http://store.neurosky.com/products/eeg-tgam) sending data over Bluetooth)
 
 Thinkgear Connector
 -------------------

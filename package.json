@@ -6,15 +6,16 @@
   "license": "MIT",
   "repository": "https://github.com/njam/neurosky-experiments",
   "dependencies": {
+    "bluebird": "^3.1.5",
     "connect": "^3.3.4",
+    "digitalsignals": "^1.0.0",
     "json2csv": "^2.2.1",
-    "mongodb": "^2.0.14",
+    "kerberos": "^0.0.18",
+    "merge": "^1.2.0",
+    "mongodb": "^2.1.4",
     "serve-static": "^1.8.1",
     "sha1": "^1.1.0",
-    "merge": "^1.2.0",
-    "digitalsignals": "^1.0.0",
-    "underscore": "^1.7.0",
     "shell-quote": "^1.4.2",
-    "bluebird": "^3.1.5"
+    "underscore": "^1.7.0"
   }
 }

@@ -23,6 +23,7 @@ All streams operate on objects of type `Sample`.
 - mongodb/writer: Writes samples to the given collection
 - fft/sampler: Reads samples' `rawEeg` value and transforms to samples with `spectrum` (type `Spectrum`)
 - stream/printer: Prints to STDOUT
+- dream/sef: Calculate SEF50 and SEF95 from spectrum
 
 ThinkgearClient
 ---------------

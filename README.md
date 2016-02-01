@@ -21,6 +21,7 @@ Streams
 All streams operate on objects of type `Sample`.
 - mongodb/reader: Reads samples from the given collection
 - mongodb/writer: Writes samples to the given collection
+- fft/sine: Generates a sine wave (for testing)
 - fft/sampler: Reads samples' `rawEeg` value and transforms to samples with `spectrum` (type `Spectrum`)
 - stream/printer: Prints to STDOUT
 - sleep/bands: Calculate magnitude of certain frequency bands from spectrum

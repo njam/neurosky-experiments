@@ -24,7 +24,7 @@ All streams operate on objects of type `Sample`.
 - fft/sine: Generates a sine wave (for testing)
 - fft/sampler: Reads samples' `rawEeg` value and transforms to samples with `spectrum` (type `Spectrum`)
 - stream/printer: Prints to STDOUT
-- sleep/bands: Calculate magnitude of certain frequency bands from spectrum
+- sleep/bands: Calculate relative magnitude of certain frequency bands from spectrum
 - sleep/sef: Calculate SEF50 and SEF95 from spectrum
 
 ThinkgearClient

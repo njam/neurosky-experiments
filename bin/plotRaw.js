@@ -2,6 +2,7 @@
 
 var Promise = require('bluebird');
 var MongodbConnection = require('../lib/mongodb/connection');
+var StreamPrinter = require('../lib/stream/printer');
 var promisifyStream = require('../lib/stream/promisify');
 var cli = require('../lib/cli');
 var plot = require('../lib/plot').plot;
@@ -18,7 +19,8 @@ cli.observePromise('plotRaw', Promise.join(
   }),
 
   function(reader) {
-    cli.observeReaderProgress(reader);
+    var printer = new StreamPrinter(1);
+    reader.pipe(printer);
     return streamToArray(reader).then(function(sampleList) {
       plot(sampleList);
     });

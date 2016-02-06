@@ -26,7 +26,7 @@ All streams operate on objects of type `Sample`.
 - stream/printer: Prints to STDOUT
 - stream/average: Moving average of numerical samples over a specified time duration
 - sleep/bands: Calculate relative magnitude of certain frequency bands from spectrum
-- sleep/sef: Calculate SEF50 and SEF95 from spectrum
+- sleep/sef: Calculate SEF50 and SEF95 from spectrum (see [A Low Computational Cost Algorithm for REM Sleep Detection Using Single Channel EEG](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4204008/))
 - thinkgear/reader: Read EEG values from *ThinkGear Connector*
 
 ThinkgearClient

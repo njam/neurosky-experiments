@@ -27,6 +27,7 @@ All streams operate on objects of type `Sample`.
 - stream/average: Moving average of numerical samples over a specified time duration
 - sleep/bands: Calculate relative magnitude of certain frequency bands from spectrum
 - sleep/sef: Calculate SEF50 and SEF95 from spectrum
+- thinkgear/reader: Read EEG values from *ThinkGear Connector*
 
 ThinkgearClient
 ---------------
